@@ -7,4 +7,4 @@ def main():
   data = data_reader.read_local_csv("src/datasets/housing_prices/train.csv")
    
 if __name__== "__main__":
-  main()
+  main() ## Start of Program
