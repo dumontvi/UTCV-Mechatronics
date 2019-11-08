@@ -1,0 +1,1 @@
+/**/int ena=10;int In1=7;int In2=4;int i=0;void setup() {  pinMode(ena, OUTPUT);  pinMode(In1, INPUT);  pinMode(In2, OUTPUT);  Serial.begin(9600);      }void loop() {  digitalWrite(In1, HIGH);  digitalWrite(In2, LOW);  analogWrite(ena, i);  i=i+1;  delay(200);  Serial.println(i);              }
