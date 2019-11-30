@@ -1,5 +1,9 @@
 #include <Adafruit_TCS34725.h>
 #include <Wire.h>
+<<<<<<< HEAD
+=======
+#include "Adafruit_TCS34725.h"
+>>>>>>> 506052b9382d27b56a9c094249d4012c84f37207
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_60X);
 
 
@@ -78,6 +82,7 @@ void loop()
   dprevg = abs(green-prevg);
   dprevb = abs(blue-prevb);
 
+<<<<<<< HEAD
   //if (abs(red-initr)!=0||abs(green-initg)!=0||abs(blue-initb)!=0){ //if at least one of current vals differ from initial
   Serial.print(dprevr); //print differences
   Serial.print(", "); 
@@ -88,6 +93,15 @@ void loop()
   //}
   
   if (dprevr>10&&dprevr<200&&dprevg>10&&dprevg<200&&dprevb>10&&dprevb<200){ //when spike occurs (ignore initial spike when first turned on)
+=======
+  if (abs(red-initr)!=0||abs(green-initg)!=0||abs(blue-initb)!=0){ //if at least one of current vals differ from initial
+    Serial.println(dprevr); 
+    Serial.println(dprevg);  
+    Serial.println(dprevb);
+  }
+
+  if (dprevr==0&&dprevg==0&&dprevb==0){ //if no change. maybe make this a range or increase time between updates
+>>>>>>> 506052b9382d27b56a9c094249d4012c84f37207
     Serial.println("STOP");
     analogWrite(ENA,0); //stop motor
     end_time = millis()/1000; //stop timer
@@ -97,8 +111,13 @@ void loop()
     Serial.print("\tduration:\t");Serial.print(duration);
     while(1); //infinite loop, can implement in such a way that if 'a' is entered again, will restart. need to put all the code in a function and call it in a condition inside the while loop.
   }
+<<<<<<< HEAD
   /*
   if (red>=93&&green<=92&&blue<=75){
+=======
+  
+  /*if (red>=93&&green<=92&&blue<=75){
+>>>>>>> 506052b9382d27b56a9c094249d4012c84f37207
     Serial.println("STOP THE MOTOR");
     analogWrite(ENA,0);
     end_time = millis();
